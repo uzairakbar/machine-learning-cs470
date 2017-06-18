@@ -105,6 +105,6 @@ conf = confusionmat(response, predict);
 %BER Rate
 BER = 0;
 for i = 1:length(conf)
-    BER = BER + (sum(conf(:, i)) - conf(i, i))/sum(conf(:, i));
+    BER = BER + (sum(conf(i, :)) - conf(i, i))/sum(conf(i, :));
 end
 BER = BER/length(conf);
